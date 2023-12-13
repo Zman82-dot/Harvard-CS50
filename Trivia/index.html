@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
+
+let correct = document.querySelector('.correct');
+correct.addEventListener('click', function(event) {
+    correct.style.backgroundColor = 'green';
+    document.querySelector('#feedback1').innerHTML = 'Correct Answer!' + '👍';
+    });
+
+
+let incorrects = document.querySelectorAll('.incorrect');
+for(let i = 0; i < incorrects.length; i++)
+{
+    incorrects[i].addEventListener('click', function(event) {
+    incorrects[i].style.backgroundColor = 'red';
+    document.querySelectorAll('#feedback1').innerHTML = 'Incorrect Answer'+ '❌';
+    });
+}
+document.querySelector('#check').addEventListener('click', function(){
+                   let input = document.querySelector('input');
+                   if(input.value == 'sun'){
+                       input.style.backgroundColor = 'green';
+                       document.querySelector('#feedback2').innerHTML = 'Correct!'+ '👍';
+                   } else {
+                       input.style.backgroundColor = 'red';
+                       document.querySelector('#feedback2').innerHTML = 'Incorrect'+ '❌';
+                   }
+                });
+});
+
+
+
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Riddle This!</h1>
+
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+               <h3>Where was the Declaration of Independence Signed?</h3>
+               <br><br>
+                <button  class="incorrect" id=>Washington D.C.</button>
+                 <button class="correct" >Philadelphia</button>
+                  <button class="incorrect" >Boston</button>
+                  <button class="incorrect" >Gettysburg</button>
+                <p id="feedback1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <h3> What is the Nearest Star to planet Earth?</h3>
+                <input type="text" ><button id="check">Check Answer</button>
+                <p id="feedback2"A></p>
+
+            </div>
+
+
+
+            <div class="section" id="feedback3">
+                <h2>Part 3: Multiple Choice </h2>
+                <hr>
+               <h3>What is sweet and what is bitter but look the same?</h3>
+               <br><br>
+
+                 <button class="incorrect" >Syrup</button>
+                  <button class="incorrect" >Honey</button>
+                  <button class="correct" >Sugar</button>
+                  <button class="correct" >Salt</button>
+                <p id="feedback3"></p>
+
+            </div>
+                <script>
+                let correct = document.querySelector('.correct');
+                    correct.addEventListenerAll('click', function(event) {
+                        correct.style.backgroundColor = 'green';
+                        document.querySelector('#feedback3').innerHTML = 'Correct Answer!';
+                        });
+
+
+                    let incorrects = document.querySelectorAll('.incorrect');
+                    for(let i = 0; i < incorrects.length; i++)
+                    {
+                        incorrects[i].addEventListener('click', function(event) {
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelectorAll('#feedback3').innerHTML = 'Incorrect Answer';
+                        });
+                    }
+                    </script>
+            </div>
+        </div>
+    </body>
+</html>
